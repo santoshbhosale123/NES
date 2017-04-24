@@ -1,0 +1,68 @@
+.hover,.hover h2{text-align:center; }
+.hover,.hover .overlay{width:100%;height:100%;overflow:hidden}
+/*.modal-body p,pre{text-transform:none;letter-spacing:0}
+*/
+/*.modal-content{color:#000}  rgb(137, 206, 95)
+.modal-body p{font-size:16px}*/
+.hover button.info,.hover h2{text-transform:uppercase;color:#fff}
+.col-lg-3,.col-md-4,.col-sm-6,.col-xs-12{padding:0}
+.hover{float:left;position:relative;cursor:default}
+.hover .overlay{position:absolute;top:0;left:0}
+.hover img{display:block;position:relative}
+.hover h2{position:relative;font-size:17px;padding:10px;background: rgb(37, 126, 160) !important;}
+.hover button.info{text-decoration:none;padding:7px 14px;border:1px solid #fff;margin:50px 0 0;border-radius:0;background-color:transparent}
+.hover button.info:hover{box-shadow:0 0 5px #fff}
+.hover button.nullbutton{border:none;padding:0;margin:0}
+/*.modal-open .modal,button:focus{outline:0!important}*/
+.ehover13 img
+{
+	-webkit-transition:all .35s;
+	transition:all .35s
+}
+.ehover13 .overlay,.ehover13 button
+{-webkit-transition:opacity .35s,-webkit-transform .35s
+}
+.ehover13:hover img
+{filter:brightness(.6);
+	-webkit-filter:brightness(.6)
+}
+.ehover13 .overlay{
+	transform: scale(0,1);
+    opacity: 0;
+    background-color: rgba(0,0,0,.5);
+    transition: opacity .35s,transform .35s;
+	width:100%;height:100%;
+	/*left:10%;top:10%;*/
+	/*border-bottom:1px solid #FFF;
+	border-top:1px solid #FFF;*/
+	transition:opacity .35s,transform .6s;
+	-webkit-transform:scale(0,1);
+	-ms-transform:scale(0,1);transform:scale(0,1)
+	}
+	.ehover13:hover .overlay{
+		opacity:1;-webkit-transform:scale(1);
+		-ms-transform:scale(1);transform:scale(1)
+	}
+.ehover13 button,.ehover13 h2{
+	opacity:0;color:#FFF;
+	padding:1em 0
+}
+.ehover13 button{
+	transition:opacity .35s,transform .5s;
+	-webkit-transform:translate3d(0,100%,0);
+	transform:translate3d(0,100%,0)
+}
+.ehover13 h2{
+	background-color:transparent;
+	-webkit-transition:opacity .5s,-webkit-transform .35s;transition:opacity .35s,transform .35s;
+	-webkit-transform:translate3d(0,-100%,0);
+	transform:translate3d(0,-100%,0)
+}
+.ehover13:hover button,.ehover13:hover h2{
+	opacity:1;-webkit-transform:translate3d(0,0,0);
+	transform:translate3d(0,0,0)
+}
+
+.album .hover.ehover13 {
+    height: auto;
+}

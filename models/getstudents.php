@@ -12,9 +12,9 @@ $result = mysqli_query($connection,$query);
 while ($row = mysqli_fetch_assoc($result)){
 
 	//echo $row['username'];
-	 //$data[]=$row;
-      array_push($data,$row);
+	 $data1[]=$row;
+      //array_push($data,$row);
 }
-print json_encode($data);
+print json_encode($data1);
 
 ?>

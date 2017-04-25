@@ -64,16 +64,6 @@
                           <td ng-if="!isedit(students.stud_id)">
                               <a  data-toggle="tooltip" title="Delete"><button class="btn btn-danger" ng-click="deletestudents(students.stud_id,$index);"><i class="fa fa-trash"></i></button></a>
                                <a  data-toggle="tooltip" title="Edit"><button class="btn btn-warning" value="{{btnName}}" ng-click="setedit(students.stud_id,students);"><i class="fa fa-edit"></i></button></a>
-
-                            <!--   <button class="btn btn-danger" ng-click="deleteuser(students
-.stud_id
-,$index);">Delete</button> 
-                              <button class="btn btn-warning" value="{{btnName}}" ng-click="setedit(students
-.stud_id
-, students
-);">Edit</button> -->
-
-                             <!--  <button class="btn btn-warning" ng-click="logout();">Logout</button> -->
                           </td>
 
                           
@@ -88,12 +78,6 @@
                           <input type="text" ng-value="students.stud_rollno" ng-model="students.stud_rollno" name="stud_rollno" ng-pattern="/^[0-9]*$/" style="width:auto;" required>
                           <p style="color:red;"  ng-show="studentform.stud_rollno.$invalid && !studentform.stud_rollno.$pristine" class="help-block"> Roll No is required.</p>
                           </td>
-
-
-
-                        <!--   <td ng-if="isedit(students.stud_id)">{{students.teacher_email}}</td> -->
-
-
                           <td ng-if="isedit(students.stud_id)">
                           <input type="text" ng-value="students.stud_parent_No" ng-model="students.stud_parent_No" name="stud_parent_No" style="width: auto;" required>
                           <p style="color:red;" ng-show="studentform.stud_parent_No.$invalid && !studentform.stud_parent_No.$pristine" class="help-block">Student's parent phone number is required.</p>
@@ -113,18 +97,6 @@
 
                              <a  data-toggle="tooltip" title="Cancle"> <button class="btn btn-danger" value="{{btnName}}" ng-click="unsetedit($index);"><i class="fa fa-close"></i></button></a>
 
-                         <!--  <td ng-if="isedit(students
-.stud_id
-)"> -->
-
-                             <!--  <button class="btn btn-danger" ng-click="updateuser(students
-,$index);">Update</button> 
-
-                              <button class="btn btn-warning" value="{{btnName}}" ng-click="unsetedit($index);">Cancel</button> -->
-
-
-
-                             <!--  <button class="btn btn-warning" ng-click="logout();">Logout</button> -->
                           </td>
                           <ng-form>
                         </tr>

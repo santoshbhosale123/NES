@@ -146,7 +146,7 @@ app.controller('Liststudentctrl', ['$scope','$http','$window','$localStorage', f
         //console.log($scope.data);
     });  */
 
- $http({
+                 $http({
                      method  : 'POST',
                      url     : '../../models/getstudents.php',
                      data    : {'teacher_id': tid}, //forms user object
@@ -169,7 +169,7 @@ app.controller('Liststudentctrl', ['$scope','$http','$window','$localStorage', f
     //alert('in delete function');
 
 
-    swal({
+    /*swal({
       title: "Are you sure?",
       text: "Your will not be able to recover this imaginary file!",
       type: "warning",
@@ -177,8 +177,8 @@ app.controller('Liststudentctrl', ['$scope','$http','$window','$localStorage', f
       confirmButtonClass: "btn-danger",
       confirmButtonText: "Yes, delete it!",
       closeOnConfirm: true
-    },
-    function(){
+    },*/
+   /* function(){*/
 
 console.log(stud_id);
      $http({
@@ -188,14 +188,14 @@ console.log(stud_id);
           headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
          })
      .success(function(data) {
-            
-                     console.log(data);
-                     $scope.data.splice(index, 1);
+               
+                        console.log(data);
+                        $scope.data.splice(index, 1);
                         $scope.$watch();
-            
- });
-            });
-  }
+
+                      });
+          
+              }
 
              $scope.isedit=function(id){
               return id==$scope.iseditid;

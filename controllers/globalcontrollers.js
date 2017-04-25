@@ -101,7 +101,7 @@ app.controller('Classsteacherlistctrl', ['$scope','$http', '$window', '$localSto
 
               $scope.deleteuser=function(teacher_id,index){
                 //alert('in delete function');
-                swal({
+               /* swal({
       title: "Are you sure?",
       text: "Your will not be able to recover this imaginary file!",
       type: "warning",
@@ -109,8 +109,8 @@ app.controller('Classsteacherlistctrl', ['$scope','$http', '$window', '$localSto
       confirmButtonClass: "btn-danger",
       confirmButtonText: "Yes, delete it!",
       closeOnConfirm: true
-    },
-    function(){
+    },*/
+/*    function(){*/
 
             console.log(teacher_id);
                  $http({
@@ -126,7 +126,7 @@ app.controller('Classsteacherlistctrl', ['$scope','$http', '$window', '$localSto
                         $scope.$watch();
 
                       });
-            })
+          
               }
                
             /*

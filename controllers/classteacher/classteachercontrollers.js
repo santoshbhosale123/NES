@@ -82,7 +82,9 @@ $scope.chartObject1.options = {
 }]);
 
 
-app.controller('Addstudentctrl', ['$scope','$http', function($scope,$http) {
+app.controller('Addstudentctrl', ['$scope','$http','$window', function($scope,$http,$window) {
+
+
   $scope.reset = function() {
   delete $scope.students;
   $scope.addstudentform.$setPristine();
@@ -90,16 +92,24 @@ app.controller('Addstudentctrl', ['$scope','$http', function($scope,$http) {
 
 
 $scope.insertdata=function(students){
+var tid = $window.localStorage.getItem('tid');
+ // $scope.students = {};
+ var stud_name = students.stud_name;
+ 
+  var stud_rollno = students.stud_rollno;
+  var stud_standard = students.stud_standard;
+  var stud_parent_No = students.stud_parent_No;
+  var stud_address = students.stud_address;
+  var stud_dob = students.stud_dob;
+  
 
-  $scope.students = {};
+  
 
-$scope.students = angular.copy(students);
 console.log($scope.students);
    $http({
           method  : 'POST',
           url     : '../../models/insertclassstudents.php',
-          data    : $scope.students, //forms user object
-          headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+          data    : {'stud_name':stud_name,'stud_rollno':stud_rollno,'stud_standard':stud_standard,'stud_parent_No':stud_parent_No,'stud_address':stud_address,'stud_dob':stud_dob,'tid':tid} 
          })
 
      .success(function(data) {
@@ -144,7 +154,7 @@ app.controller('Liststudentctrl', ['$scope','$http','$window','$localStorage', f
                     })
            
                 .success(function(data) {
-                      // console.log(data);
+                      console.log(data);
                        $scope.data=data
 
                      });

@@ -30,21 +30,15 @@
                          <li><a href="#/liststudent">List Students</a></li>
                     </ul>
                   </li>
-
-
-
-
-                        <!--<li ng-hide="!isteacher()" ng-controller="Dashboard"><a><i class="fa fa-group"></i>Report genaration<span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="#/aquareports">Generate Aqua reports</a></li>
-                      <li><a href="#/gasreports">Generate Gas reports</a></li>
                    
+                    <li ng-hide="!isclassteacher()" ng-controller="Dashboard"><a><i class="fa fa-tint gradient-aqua"></i>Manage Exams <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="#/addmarks">Add marks</a></li>
+                      <!-- <li><a href="#/listunit1marks">List Test Unit1 marks</a></li> -->
                         <!-- <li><a href="#/addexpensive">Add teacher Expensives</a></li>
-                          <li><a href="#/listexpensive">List teacher expensives</a></li> 
+                          <li><a href="#/listexpensive">List teacher expensives</a></li> -->
                     </ul>
                   </li>
--->
-
 
 
 
@@ -62,8 +56,7 @@
                     </ul>
                   </li>
 
-
-
+                       
 
 
 

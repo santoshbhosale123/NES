@@ -26,7 +26,18 @@ app.config(function($routeProvider) {
             templateUrl : 'classteacher/liststudent.php',
             controller  : 'Liststudentctrl'
         })
+
+      .when('/addmarks', {
+            templateUrl : 'classteacher/addmarks.php',
+            controller  : 'Addmarksctrl'
+        })
+      /*.when('/listunit1marks', {
+            templateUrl : 'classteacher/listunit1marks.php',
+            controller  : 'Listunit1marksctrl'
+        })*/
     
+
+
 
      .when('/classteacherlist', {
             templateUrl : 'classteacherlist.php',
@@ -36,6 +47,12 @@ app.config(function($routeProvider) {
             templateUrl : 'addclassteacher.php',
             controller  : 'Addclassteacherctrl'
         })
+
+     
+        
+
+
+
       /*.when('/addexpensive', {
             templateUrl : 'addexpensive.php',
             controller  : 'Addexpensive'

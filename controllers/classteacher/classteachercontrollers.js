@@ -369,7 +369,58 @@ $http.get("../../models/getUnitIImarks.php")
 
 }]);
 
+app.controller('Firstsemesterresultctrl', ['$scope','$http', function($scope,$http) {
 
+
+$http.get("../../models/getSemestermarks.php")
+    .success(function(data){
+        $scope.data=data
+        console.log($scope.data);
+
+    });
+
+}]);
+
+
+
+app.controller('ListunitIIImarksctrl', ['$scope','$http', function($scope,$http) {
+
+
+$http.get("../../models/getunitIIImarks.php")
+    .success(function(data){
+        $scope.data=data
+        console.log($scope.data);
+
+    });
+
+}]);
+
+
+
+app.controller('ListunitIVmarksctrl', ['$scope','$http', function($scope,$http) {
+
+
+$http.get("../../models/getunitIVmarks.php")
+    .success(function(data){
+        $scope.data=data
+        console.log($scope.data);
+
+    });
+
+}]);
+
+
+app.controller('Secondsemesterresultctrl', ['$scope','$http', function($scope,$http) {
+
+
+$http.get("../../models/getsecondsemmarks.php")
+    .success(function(data){
+        $scope.data=data
+        console.log($scope.data);
+
+    });
+
+}]);
 
 /*app.controller('Listunit1marksctrl', ['$scope','$http', function($scope,$http) {
   

@@ -1,8 +1,8 @@
-<div class="userlist" ng-controller="Firstsemesterresultctrl">
+<div class="userlist" ng-controller="Secondsemesterresultctrl">
 <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>First Semester marks</h2>
+                    <h2>Second Semester  marks</h2>
                 
                     <div class="clearfix"></div>
                   </div>

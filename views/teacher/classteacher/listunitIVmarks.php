@@ -1,15 +1,16 @@
-<div class="userlist" ng-controller="Firstsemesterresultctrl">
+<div class="userlist" ng-controller="ListunitIVmarksctrl">
 <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>First Semester marks</h2>
-                
+                    <h2>List of Unit Test IV marks</h2>
+                  
+                  
                     <div class="clearfix"></div>
                   </div>
 
 
                       <div class="item form-group">
-                     
+                      
                          <div class=" form-group col-md-6 col-sm-6 col-xs-12 col-md-offset-6" >
                           <input type="text" ng-model="clisearch" id="clisearch" placeholder="&#xF002; Search for ..." name="clisearch" >
                           
@@ -19,7 +20,7 @@
 
 
                   <div class="x_content">
-                  
+                 
                     <table id="datatable-buttons" class="table table-striped table-bordered">
                       <thead>
                         <tr>

@@ -46,6 +46,18 @@ app.config(function($routeProvider) {
             templateUrl : 'classteacher/firstsemesterresult.php',
             controller  : 'Firstsemesterresultctrl'
         })
+         .when('/listunitIIImarks', {
+            templateUrl : 'classteacher/listunitIIImarks.php',
+            controller  : 'ListunitIIImarksctrl'
+        })
+          .when('/listunitIVmarks', {
+            templateUrl : 'classteacher/listunitIVmarks.php',
+            controller  : 'ListunitIVmarksctrl'
+        })
+           .when('/secondsemesterresult', {
+            templateUrl : 'classteacher/secondsemesterresult.php',
+            controller  : 'Secondsemesterresultctrl'
+        })
 
       /*.when('/listunit1marks', {
             templateUrl : 'classteacher/listunit1marks.php',

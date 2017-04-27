@@ -39,11 +39,12 @@
                           <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-list-ul "></i></span>
                           <select class="form-control" ng-model="test_type" name="test_type" class="{'has-errors' : marksform.test_type.$invalid, 'no-errors' : marksform.test_type.$valid}" ng-required="true">
-                            <option value="UnitI" selected>UnitI</option>
-                            <option value="UnitII">UnitII </option>
-                            <option value="SemisterI">SemisterI</option>
-                            <option value="UnitIII">UnitIII</option>
-                            <option value="SemisterII">SemisterII</option>
+                            <option value="UnitI" selected>Unit-I</option>
+                            <option value="UnitII">Unit-II </option>
+                            <option value="SemisterI">Semister-I</option>
+                            <option value="UnitIII">Unit-III</option>
+                             <option value="UnitIV">Unit-IV</option>
+                            <option value="SemisterII">Semister-II</option>
                           </select>
                         </div>
                         </div>

@@ -3,7 +3,7 @@
     global $connection;
     $sql = "localhost"; 
     $username = "root";
-    $password = "root";
+    $password = "";
     $connection = mysqli_connect($sql, $username, $password) or 
     die("Unable to Connect");
     $databse = mysqli_select_db($connection,"nes"); 

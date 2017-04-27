@@ -103,13 +103,12 @@ var tid = $window.localStorage.getItem('tid');
   var stud_dob = students.stud_dob;
   
 
-  
-
 console.log($scope.students);
    $http({
           method  : 'POST',
           url     : '../../models/insertclassstudents.php',
           data    : {'stud_name':stud_name,'stud_rollno':stud_rollno,'stud_standard':stud_standard,'stud_parent_No':stud_parent_No,'stud_address':stud_address,'stud_dob':stud_dob,'tid':tid} 
+      
          })
 
      .success(function(data) {

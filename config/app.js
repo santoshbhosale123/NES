@@ -35,6 +35,18 @@ app.config(function($routeProvider) {
             templateUrl : 'classteacher/listunitImarks.php',
             controller  : 'ListunitImarksctrl'
         })
+
+
+       .when('/listunitIImarks', {
+            templateUrl : 'classteacher/listunitIImarks.php',
+            controller  : 'ListunitIImarksctrl'
+        })
+
+         .when('/firstsemesterresult', {
+            templateUrl : 'classteacher/firstsemesterresult.php',
+            controller  : 'Firstsemesterresultctrl'
+        })
+
       /*.when('/listunit1marks', {
             templateUrl : 'classteacher/listunit1marks.php',
             controller  : 'Listunit1marksctrl'
@@ -52,6 +64,7 @@ app.config(function($routeProvider) {
             controller  : 'Addclassteacherctrl'
         })
 
+      
      
         
 

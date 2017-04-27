@@ -35,7 +35,9 @@
                     <ul class="nav child_menu">
                       <li><a href="#/addmarks">Add marks</a></li>
                      <li><a href="#/listunitImarks">List UnitI marks</a></li>
-                      <!-- <li><a href="#/listunit1marks">List Test Unit1 marks</a></li> -->
+                     <li><a href="#/listunitIImarks">List UnitII marks</a></li>
+                     <li><a href="#/firstsemesterresult">First Semester marks</a></li>
+                     <!-- <li><a href="#/listunit1marks">List Test Unit1 marks</a></li> -->
                         <!-- <li><a href="#/addexpensive">Add teacher Expensives</a></li>
                           <li><a href="#/listexpensive">List teacher expensives</a></li> -->
                     </ul>

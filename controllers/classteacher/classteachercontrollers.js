@@ -339,7 +339,7 @@ $scope.insertdata=function(){
           });
 
 }
-
+}]);
 
 app.controller('ListunitImarksctrl', ['$scope','$http', function($scope,$http) {
 
@@ -357,8 +357,20 @@ $http.get("../../models/getUnitImarks.php")
 
 }]);
 
+app.controller('ListunitIImarksctrl', ['$scope','$http', function($scope,$http) {
+
+
+$http.get("../../models/getUnitIImarks.php")
+    .success(function(data){
+        $scope.data=data
+        console.log($scope.data);
+
+    });
 
 }]);
+
+
+
 /*app.controller('Listunit1marksctrl', ['$scope','$http', function($scope,$http) {
   
 

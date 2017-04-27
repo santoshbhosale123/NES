@@ -34,6 +34,7 @@
                     <li ng-hide="!isclassteacher()" ng-controller="Dashboard"><a><i class="fa fa-tint gradient-aqua"></i>Manage Exams <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="#/addmarks">Add marks</a></li>
+                     <li><a href="#/listunitImarks">List UnitI marks</a></li>
                       <!-- <li><a href="#/listunit1marks">List Test Unit1 marks</a></li> -->
                         <!-- <li><a href="#/addexpensive">Add teacher Expensives</a></li>
                           <li><a href="#/listexpensive">List teacher expensives</a></li> -->

@@ -31,6 +31,10 @@ app.config(function($routeProvider) {
             templateUrl : 'classteacher/addmarks.php',
             controller  : 'Addmarksctrl'
         })
+      .when('/listunitImarks', {
+            templateUrl : 'classteacher/listunitImarks.php',
+            controller  : 'ListunitImarksctrl'
+        })
       /*.when('/listunit1marks', {
             templateUrl : 'classteacher/listunit1marks.php',
             controller  : 'Listunit1marksctrl'

@@ -114,7 +114,7 @@ console.log($scope.students);
 
      .success(function(data) {
             console.log(data);
-              //$scope.msg = "data inserted successfully "
+              $scope.msg = "data inserted successfully "
                         delete $scope.students;
                        /* swal({
   title: "Successfully!",
@@ -342,8 +342,21 @@ $scope.insertdata=function(){
 }
 
 
+app.controller('ListunitImarksctrl', ['$scope','$http', function($scope,$http) {
 
 
+
+$http.get("../../models/getUnitImarks.php")
+    .success(function(data){
+        $scope.data=data
+        console.log($scope.data);
+
+    });
+
+
+
+
+}]);
 
 
 }]);

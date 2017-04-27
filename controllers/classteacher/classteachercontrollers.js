@@ -340,13 +340,13 @@ $scope.insertdata=function(){
 
 }
 
-
-app.controller('ListunitImarksctrl', ['$scope','$http', function($scope,$http) {
-
+}]);
+app.controller('Listunitmarksctrl', ['$scope','$http', function($scope,$http) {
 
 
 $http.get("../../models/getUnitImarks.php")
     .success(function(data){
+      console.log(data);
         $scope.data=data
         console.log($scope.data);
 
@@ -358,7 +358,7 @@ $http.get("../../models/getUnitImarks.php")
 }]);
 
 
-}]);
+
 /*app.controller('Listunit1marksctrl', ['$scope','$http', function($scope,$http) {
   
 

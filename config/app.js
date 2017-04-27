@@ -33,7 +33,7 @@ app.config(function($routeProvider) {
         })
       .when('/listunitImarks', {
             templateUrl : 'classteacher/listunitImarks.php',
-            controller  : 'ListunitImarksctrl'
+            controller  : 'Listunitmarksctrl'
         })
       /*.when('/listunit1marks', {
             templateUrl : 'classteacher/listunit1marks.php',

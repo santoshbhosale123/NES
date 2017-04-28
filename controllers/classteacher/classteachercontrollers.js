@@ -460,6 +460,8 @@ $http.get("../../models/getUnitIImarks.php")
 
 app.controller('Firstsemesterresultctrl', ['$scope','$http', function($scope,$http) {
 
+ $scope.iseditid='';
+    $scope.oldsemI='';
 
 $http.get("../../models/getSemestermarks.php")
     .success(function(data){
@@ -468,8 +470,96 @@ $http.get("../../models/getSemestermarks.php")
 
     });
 
-}]);
+$scope.deletsemI=function(marks_id,index){
+  
+    delete $scope.unsetedit();
 
+    //alert('in delete function');
+
+
+    /*swal({
+      title: "Are you sure?",
+      text: "Your will not be able to recover this imaginary file!",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonClass: "btn-danger",
+      confirmButtonText: "Yes, delete it!",
+      closeOnConfirm: true
+    },*/
+   /* function(){*/
+
+console.log(marks_id);
+     $http({
+          method  : 'POST',
+          url     : '../../models/deletefirstsemstudent.php',
+          data    : {'marks_id': marks_id}, //forms user object
+          headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+         })
+     .success(function(data) {
+               
+                        console.log(data);
+                        $scope.data.splice(index, 1);
+                        $scope.$watch();
+
+                      });
+          
+              }
+             
+
+             $scope.isedit=function(id){
+              return id==$scope.iseditid;
+            }
+            $scope.setedit=function(id,oldsemI){
+              if($scope.oldsemI){
+                var index1 = getIndexOf($scope.data, $scope.iseditid, "marks_id");
+                $scope.data[index1]=angular.copy($scope.oldsemI);
+                delete $scope.oldsemI;
+              }
+              $scope.iseditid=id;
+              $scope.oldsemI=angular.copy(oldsemI);
+              $scope.$watch();
+            }
+            $scope.unsetedit=function(id){
+              $scope.iseditid='';
+              $scope.data[id]=angular.copy($scope.oldsemI);
+              $scope.$watch();
+
+            }
+            $scope.initval = function (marks) {
+                settings = window[settings];
+                console.log(settings.awesome); //1
+            };
+            $scope.updatesemI=function(marks,index){
+
+              console.log(marks);
+              $http({
+                     method  : 'POST',
+                     url     : '../../models/updatefirstsemliststudent.php',
+                     data    : marks, //forms user object
+                     headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+                    })
+           
+                .success(function(data) {
+                       console.log(data);
+                        $scope.msg = "data inserted successfully ";
+                        $scope.marksform.$setPristine();
+                        delete $scope.oldsemI;
+                        $scope.iseditid='';
+                        $scope.$watch();
+                     });
+           
+           }
+            function getIndexOf(arr, val, prop) {
+              var l = arr.length,
+                k = 0;
+              for (k = 0; k < l; k = k + 1) {
+                if (arr[k][prop] === val) {
+                  return k;
+                }
+              }
+              return false;
+            }
+ }]);
 
 
 app.controller('ListunitIIImarksctrl', ['$scope','$http', function($scope,$http) {

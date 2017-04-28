@@ -99,7 +99,7 @@
                           </td>
 
                            <td ng-if="isedit(marks.marks_id)">
-                          <input type="text" style="width:50px;" ng-value="marks.Hindi" ng-model="marks.Hindi" name="Hindi" style="width: auto;" required>
+                          <input type="text" style="width:50px;" ng-value="marks.Hindi" ng-model="marks.Hindi" name="Hindi"  required>
                           <p style="color:red;" ng-show="marksform.Hindi.$invalid && !marksform.Hindi.$pristine" class="help-block">required.</p>
                           </td>
 

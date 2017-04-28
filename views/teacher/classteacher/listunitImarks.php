@@ -57,7 +57,7 @@
 
                       <tbody>
                         
-                        <tr ng-repeat="marks in data | filter:clisearch">
+                        <tr ng-repeat="marks in data | filter:clisearch" ng-form="subForm">
                           <td ng-if="!isedit(marks.marks_id)">{{marks.stud_name}}</td>
                           <td ng-if="!isedit(marks.marks_id)">{{marks.stud_rollno}}</td>
                            <td ng-if="!isedit(marks.marks_id)">{{marks.Marathi}}</td>
@@ -94,9 +94,11 @@
                <td ng-if="isedit(marks.marks_id)">{{marks.stud_rollno}}</td>
 
                           <td ng-if="isedit(marks.marks_id)">
-                          <input type="text" style="width:50px;" ng-value="marks.Marathi" ng-model="marks.Marathi" name="Marathi" style="width: auto;" required>
-                          <p style="color:red;" ng-show="marksform.Marathi.$invalid && !marksform.Marathi.$pristine" class="help-block">required.</p>
+                          <input type="text" style="width:50px;" ng-value="marks.Marathi" ng-pattern="/^([0-1]?[0-9]|20)$/" ng-model="marks.Marathi" name="Marathi" style="width: auto;" required>
+                            <p style="color:red;" ng-show="subForm.Marathi.$error.required"> required field.</p>
+                           <p style="color:red;" ng-show="!subForm.Marathi.$error.required && subForm.Marathi.$invalid"> marks can be upto 20 and digits only.</p>
                           </td>
+
 
                            <td ng-if="isedit(marks.marks_id)">
                           <input type="text" style="width:50px;" ng-value="marks.Hindi" ng-model="marks.Hindi" name="Hindi"  required>

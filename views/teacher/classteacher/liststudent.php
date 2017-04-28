@@ -53,7 +53,7 @@
 
                       <tbody>
                         
-                        <tr ng-repeat="students in data | filter:clisearch">
+                        <tr ng-repeat="students in data | filter:clisearch" ng-form="subForm">
                           <td ng-if="!isedit(students.stud_id)">{{students.stud_name}}</td>
                           <td ng-if="!isedit(students.stud_id)">{{students.stud_rollno}}</td>
                            <td ng-if="!isedit(students.stud_id)">{{students.stud_parent_No}}</td>
@@ -71,7 +71,7 @@
                           
                           <td ng-if="isedit(students.stud_id)">
                           <input type="text" ng-value="students.stud_name" ng-model="students.stud_name" name="stud_name" style="width:auto;" required>
-                          <p style="color:red;" ng-show="studentform.stud_name.$invalid && !studentform.stud_name.$pristine" class="help-block"> fullname is required.</p>
+                           <p style="color:red;" ng-show="subForm.stud_name.$error.required"> Name is required.</p>
                           </td>
                           
                           <td ng-if="isedit(students.stud_id)">

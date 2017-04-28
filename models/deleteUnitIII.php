@@ -16,4 +16,4 @@ $query = "delete from  tbl_marks where marks_id = '".$data['marks_id']."'";
     }
     //echo json_encode($data);
 
-    ?>	
+    ?>

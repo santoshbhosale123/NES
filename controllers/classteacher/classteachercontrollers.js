@@ -637,6 +637,8 @@ console.log(marks_id);
 
 
 app.controller('ListunitIIImarksctrl', ['$scope','$http', function($scope,$http) {
+   $scope.iseditid='';
+    $scope.oldunitIII='';
 
 
 $http.get("../../models/getunitIIImarks.php")
@@ -646,8 +648,96 @@ $http.get("../../models/getunitIIImarks.php")
 
     });
 
-}]);
+$scope.deleteUnitIII=function(marks_id,index){
+  
+    delete $scope.unsetedit();
 
+    //alert('in delete function');
+
+
+    /*swal({
+      title: "Are you sure?",
+      text: "Your will not be able to recover this imaginary file!",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonClass: "btn-danger",
+      confirmButtonText: "Yes, delete it!",
+      closeOnConfirm: true
+    },*/
+   /* function(){*/
+
+console.log(marks_id);
+     $http({
+          method  : 'POST',
+          url     : '../../models/deleteUnitIII.php',
+          data    : {'marks_id': marks_id}, //forms user object
+          headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+         })
+     .success(function(data) {
+               
+                        console.log(data);
+                        $scope.data.splice(index, 1);
+                        $scope.$watch();
+
+                      });
+          
+              }
+             
+
+             $scope.isedit=function(id){
+              return id==$scope.iseditid;
+            }
+            $scope.setedit=function(id,oldunitIII){
+              if($scope.oldunitIII){
+                var index1 = getIndexOf($scope.data, $scope.iseditid, "marks_id");
+                $scope.data[index1]=angular.copy($scope.oldunitIII);
+                delete $scope.oldunitIII;
+              }
+              $scope.iseditid=id;
+              $scope.oldunitIII=angular.copy(oldunitIII);
+              $scope.$watch();
+            }
+            $scope.unsetedit=function(id){
+              $scope.iseditid='';
+              $scope.data[id]=angular.copy($scope.oldunitIII);
+              $scope.$watch();
+
+            }
+            $scope.initval = function (marks) {
+                settings = window[settings];
+                console.log(settings.awesome); //1
+            };
+            $scope.updateUnitIII=function(marks,index){
+
+              console.log(marks);
+              $http({
+                     method  : 'POST',
+                     url     : '../../models/updateUnitIII.php',
+                     data    : marks, //forms user object
+                     headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+                    })
+           
+                .success(function(data) {
+                       console.log(data);
+                        $scope.msg = "data inserted successfully ";
+                        $scope.marksform.$setPristine();
+                        delete $scope.oldunitIII;
+                        $scope.iseditid='';
+                        $scope.$watch();
+                     });
+           
+           }
+            function getIndexOf(arr, val, prop) {
+              var l = arr.length,
+                k = 0;
+              for (k = 0; k < l; k = k + 1) {
+                if (arr[k][prop] === val) {
+                  return k;
+                }
+              }
+              return false;
+            }
+ }]);
 
 
 app.controller('ListunitIVmarksctrl', ['$scope','$http', function($scope,$http) {

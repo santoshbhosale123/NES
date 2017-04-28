@@ -41,7 +41,7 @@
 
                       <tbody>
                         
-                        <tr ng-repeat="marks in data | filter:clisearch">
+                        <tr ng-repeat="marks in data | filter:clisearch"  ng-form="subForm">
                           <td ng-if="!isedit(marks.marks_id)">{{marks.stud_name}}</td>
                           <td ng-if="!isedit(marks.marks_id)">{{marks.stud_rollno}}</td>
                            <td ng-if="!isedit(marks.marks_id)">{{marks.Marathi}}</td>
@@ -75,44 +75,44 @@
 
 
                           <td ng-if="isedit(marks.marks_id)">
-                          <input type="text" ng-value="marks.Marathi" ng-model="marks.Marathi" name="Marathi" style="width: 50px;" required>
-                          <p style="color:red;" ng-show="marksform.Marathi.$invalid && !marksform.Marathi.$pristine" class="help-block">required.</p>
-                          </td>
+                          <input type="text" ng-value="marks.Marathi" ng-model="marks.Marathi" ng-pattern="/^([0-1]?[0-9]|20)$/" name="Marathi" style="width: 50px;" required>
+                          <p style="color:red;" ng-show="!subForm.Marathi.$error.required && subForm.Marathi.$invalid"> marks can be upto 20 and digits only.</p>
+                          <p style="color:red;" ng-show="subForm.Marathi.$error.required"> required field.</p>                          </td>
 
                            <td ng-if="isedit(marks.marks_id)">
-                          <input type="text" ng-value="marks.Hindi" ng-model="marks.Hindi" name="Hindi" style="width:50px;" required>
-                          <p style="color:red;" ng-show="marksform.Hindi.$invalid && !marksform.Hindi.$pristine" class="help-block">required.</p>
-                          </td>
+                          <input type="text" ng-value="marks.Hindi" ng-model="marks.Hindi" ng-pattern="/^([0-1]?[0-9]|20)$/" name="Hindi" style="width:50px;" required>
+                          <p style="color:red;" ng-show="!subForm.Hindi.$error.required && subForm.Hindi.$invalid"> marks can be upto 20 and digits only.</p>
+                          <p style="color:red;" ng-show="subForm.Hindi.$error.required"> required field.</p>                          </td>
 
                            <td ng-if="isedit(marks.marks_id)">
-                          <input type="text" ng-value="marks.English" ng-model="marks.English" name="English" style="width: 50px;" required>
-                          <p style="color:red;" ng-show="marksform.English.$invalid && !marksform.English.$pristine" class="help-block">required.</p>
-                          </td>
+                          <input type="text" ng-value="marks.English" ng-model="marks.English" ng-pattern="/^([0-1]?[0-9]|20)$/" name="English" style="width: 50px;" required>
+                          <p style="color:red;" ng-show="!subForm.English.$error.required && subForm.English.$invalid"> marks can be upto 20 and digits only.</p>
+                          <p style="color:red;" ng-show="subForm.English.$error.required"> required field.</p>                          </td>
 
                             <td ng-if="isedit(marks.marks_id)">
-                          <input type="text" ng-value="marks.Maths" ng-model="marks.Maths" name="Maths" style="width:50px;" required>
-                          <p style="color:red;" ng-show="marksform.Maths.$invalid && !marksform.Maths.$pristine" class="help-block">required.</p>
-                          </td>
-
-                <td ng-if="isedit(marks.marks_id)">
-                          <input type="text" ng-value="marks.GSci" ng-model="marks.GSci" name="GSci" style="width:50px;" required>
-                          <p style="color:red;" ng-show="marksform.GSci.$invalid && !marksform.GSci.$pristine" class="help-block">required.</p>
-                          </td>
+                          <input type="text" ng-value="marks.Maths" ng-model="marks.Maths" ng-pattern="/^([0-1]?[0-9]|20)$/" name="Maths" style="width:50px;" required>
+                          <p style="color:red;" ng-show="!subForm.Maths.$error.required && subForm.Maths.$invalid"> marks can be upto 20 and digits only.</p>
+                          <p style="color:red;" ng-show="subForm.Maths.$error.required"> required field.</p>                          </td>
 
                          <td ng-if="isedit(marks.marks_id)">
-                          <input type="text" ng-value="marks.SoSci" ng-model="marks.SoSci" name="SoSci" style="width:50px;" required>
-                          <p style="color:red;" ng-show="marksform.SoSci.$invalid && !marksform.SoSci.$pristine" class="help-block">required.</p>
-                          </td>
+                          <input type="text" ng-value="marks.GSci" ng-model="marks.GSci" ng-pattern="/^([0-1]?[0-9]|20)$/" name="GSci" style="width:50px;" required>
+                           <p style="color:red;" ng-show="!subForm.GSci.$error.required && subForm.GSci.$invalid"> marks can be upto 20 and digits only.</p>
+                          <p style="color:red;" ng-show="subForm.GSci.$error.required"> required field.</p>                          </td>
 
                          <td ng-if="isedit(marks.marks_id)">
-                          <input type="text" ng-value="marks.MAT" ng-model="marks.MAT" name="MAT" style="width:50px;" required>
-                          <p style="color:red;" ng-show="marksform.MAT.$invalid && !marksform.MAT.$pristine" class="help-block">required.</p>
-                          </td>
+                          <input type="text" ng-value="marks.SoSci" ng-model="marks.SoSci" ng-pattern="/^([0-1]?[0-9]|20)$/" name="SoSci" style="width:50px;" required>
+                          <p style="color:red;" ng-show="!subForm.SoSci.$error.required && subForm.SoSci.$invalid"> marks can be upto 20 and digits only.</p>
+                          <p style="color:red;" ng-show="subForm.SoSci.$error.required"> required field.</p>                          </td>
+
+                         <td ng-if="isedit(marks.marks_id)">
+                          <input type="text" ng-value="marks.MAT" ng-model="marks.MAT" ng-pattern="/^([0-1]?[0-9]|20)$/" name="MAT" style="width:50px;" required>
+                            <p style="color:red;" ng-show="!subForm.MAT.$error.required && subForm.MAT.$invalid"> marks can be upto 20 and digits only.</p>
+                          <p style="color:red;" ng-show="subForm.MAT.$error.required"> required field.</p>                          </td>
 
                         <td ng-if="isedit(marks.marks_id)">
-                          <input type="text" ng-value="marks.Computer" ng-model="marks.Computer" name="Computer" style="width:50px;" required>
-                          <p style="color:red;" ng-show="marksform.Computer.$invalid && !marksform.Computer.$pristine" class="help-block">required.</p>
-                          </td>
+                          <input type="text" ng-value="marks.Computer" ng-model="marks.Computer" ng-pattern="/^([0-1]?[0-9]|20)$/" name="Computer" style="width:50px;" required>
+                         <p style="color:red;" ng-show="!subForm.Computer.$error.required && subForm.Computer.$invalid"> marks can be upto 20 and digits only.</p>
+                          <p style="color:red;" ng-show="subForm.Computer.$error.required"> required field.</p>                          </td>
 
                            
                           

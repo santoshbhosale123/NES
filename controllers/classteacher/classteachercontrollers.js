@@ -562,20 +562,6 @@ $scope.deletsemI=function(marks_id,index){
   
     delete $scope.unsetedit();
 
-    //alert('in delete function');
-
-
-    /*swal({
-      title: "Are you sure?",
-      text: "Your will not be able to recover this imaginary file!",
-      type: "warning",
-      showCancelButton: true,
-      confirmButtonClass: "btn-danger",
-      confirmButtonText: "Yes, delete it!",
-      closeOnConfirm: true
-    },*/
-   /* function(){*/
-
 console.log(marks_id);
      $http({
           method  : 'POST',
@@ -666,6 +652,8 @@ $http.get("../../models/getunitIIImarks.php")
 
 app.controller('ListunitIVmarksctrl', ['$scope','$http', function($scope,$http) {
 
+ $scope.iseditid='';
+    $scope.oldsemIV='';
 
 $http.get("../../models/getunitIVmarks.php")
     .success(function(data){
@@ -674,11 +662,92 @@ $http.get("../../models/getunitIVmarks.php")
 
     });
 
+$scope.deleteunitIV=function(marks_id,index){
+    delete $scope.unsetedit();
+
+   
+
+console.log(marks_id);
+     $http({
+          method  : 'POST',
+          url     : '../../models/deleteunitIVmarks.php',
+          data    : {'marks_id': marks_id}, //forms user object
+          headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+         })
+     .success(function(data) {
+               
+                        console.log(data);
+                        $scope.data.splice(index, 1);
+                        $scope.$watch();
+
+                      });
+          
+              }
+             
+
+             $scope.isedit=function(id){
+              return id==$scope.iseditid;
+            }
+            $scope.setedit=function(id,oldsemIV){
+              if($scope.oldsemIV){
+                var index1 = getIndexOf($scope.data, $scope.iseditid, "marks_id");
+                $scope.data[index1]=angular.copy($scope.oldsemIV);
+                delete $scope.oldsemIV;
+              }
+              $scope.iseditid=id;
+              $scope.oldsemIV=angular.copy(oldsemIV);
+              $scope.$watch();
+            }
+            $scope.unsetedit=function(id){
+              $scope.iseditid='';
+              $scope.data[id]=angular.copy($scope.oldsemIV);
+              $scope.$watch();
+
+            }
+            $scope.initval = function (marks) {
+                settings = window[settings];
+                console.log(settings.awesome); //1
+            };
+            $scope.updateUnitIV=function(marks,index){
+
+              console.log(marks);
+              $http({
+                     method  : 'POST',
+                     url     : '../../models/updateUnitIV.php',
+                     data    : marks, //forms user object
+                     headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+                    })
+           
+                .success(function(data) {
+                       console.log(data);
+                        $scope.msg = "data inserted successfully ";
+                        $scope.marksform.$setPristine();
+                        delete $scope.oldsemIV;
+                        $scope.iseditid='';
+                        $scope.$watch();
+                     });
+           
+           }
+            function getIndexOf(arr, val, prop) {
+              var l = arr.length,
+                k = 0;
+              for (k = 0; k < l; k = k + 1) {
+                if (arr[k][prop] === val) {
+                  return k;
+                }
+              }
+              return false;
+            }
+
+
 }]);
 
 
 app.controller('Secondsemesterresultctrl', ['$scope','$http', function($scope,$http) {
 
+
+ $scope.iseditid='';
+    $scope.oldsemII='';
 
 $http.get("../../models/getsecondsemmarks.php")
     .success(function(data){
@@ -686,6 +755,83 @@ $http.get("../../models/getsecondsemmarks.php")
         console.log($scope.data);
 
     });
+
+
+    $scope.deletesemII=function(marks_id,index){
+  
+    delete $scope.unsetedit();
+
+console.log(marks_id);
+     $http({
+          method  : 'POST',
+          url     : '../../models/deletesemIImarks.php',
+          data    : {'marks_id': marks_id}, //forms user object
+          headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+         })
+     .success(function(data) {
+               
+                        console.log(data);
+                        $scope.data.splice(index, 1);
+                        $scope.$watch();
+
+                      });
+          
+              }
+             
+
+             $scope.isedit=function(id){
+              return id==$scope.iseditid;
+            }
+            $scope.setedit=function(id,oldsemII){
+              if($scope.oldsemII){
+                var index1 = getIndexOf($scope.data, $scope.iseditid, "marks_id");
+                $scope.data[index1]=angular.copy($scope.oldsemII);
+                delete $scope.oldsemII;
+              }
+              $scope.iseditid=id;
+              $scope.oldsemII=angular.copy(oldsemII);
+              $scope.$watch();
+            }
+            $scope.unsetedit=function(id){
+              $scope.iseditid='';
+              $scope.data[id]=angular.copy($scope.oldsemII);
+              $scope.$watch();
+
+            }
+            $scope.initval = function (marks) {
+                settings = window[settings];
+                console.log(settings.awesome); //1
+            };
+            $scope.updatesemII=function(marks,index){
+
+              console.log(marks);
+              $http({
+                     method  : 'POST',
+                     url     : '../../models/updatesemIImarks.php',
+                     data    : marks, //forms user object
+                     headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+                    })
+           
+                .success(function(data) {
+                       console.log(data);
+                        $scope.msg = "data inserted successfully ";
+                        $scope.marksform.$setPristine();
+                        delete $scope.oldsemI;
+                        $scope.iseditid='';
+                        $scope.$watch();
+                     });
+           
+           }
+            function getIndexOf(arr, val, prop) {
+              var l = arr.length,
+                k = 0;
+              for (k = 0; k < l; k = k + 1) {
+                if (arr[k][prop] === val) {
+                  return k;
+                }
+              }
+              return false;
+            }
 
 }]);
 
